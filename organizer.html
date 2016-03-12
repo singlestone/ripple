@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SingleStone Toss</title>
+    <link rel="stylesheet" type="text/css" href="styles/fonts.css">
+    <link rel="stylesheet" type="text/css" href="styles/organizer.css">
+</head>
+<body class="organizer">
+
+    <div class="start fade hide">
+        <div class="content">
+            <img src="images/ripple.svg"/>
+            <div class="logo">
+                <span>Ripple</span>
+            </div>
+            <button class="start-game">Start</button>
+        </div>
+    </div>
+
+    <div class="scoreboard fade hide">
+        <div class="countdown">
+            <span>02:00</span>
+        </div>
+        <div class="teams">
+            <div class="team turtles">
+                <span class="name above">Turtles</span>
+                <div class="image">
+                    <img src="images/turtle.svg"/>
+                </div>
+                <span class="score">100</span>
+            </div>
+            <div class="team ducks">
+                <span class="name above">Ducks</span>
+                <div class="image">
+                    <img src="images/duck-01.svg"/>
+                </div>
+                <span class="score">50</span>
+            </div>
+            <div class="team frogs">
+                <span class="name above">Frogs</span>
+                <div class="image">
+                    <img src="images/frog-01.svg"/>
+                </div>
+                <span class="score">150</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="results fade hide">
+        <div class="content">
+            <button class="reset-game">Reset</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/lib/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="scripts/lib/moment.min.js"></script>
+    <script type="text/javascript" src="scripts/app/organizer.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+body {
+    font-family: 'museo_sans300', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.organizer {
+    background-color: #FFFFFF;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+}
+
+.organizer .start {
+    background-color: #00C2D4;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+}
+
+.organizer .start .content {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.organizer .start .content img {
+    height: 4em;
+    margin-bottom: 1em;
+}
+
+.organizer .start .content .logo {
+    color: #FFFFFF;
+    font-family: 'museo_sans900';
+    font-size: 5.5em;
+    letter-spacing: 0.13em;
+    margin-bottom: 0.7em;
+    text-indent: 0.13em;
+    text-transform: uppercase;
+}
+
+.organizer .start .content .start-game {
+    background-color: #F8CA61;
+    border: none;
+    border-radius: 0.4em;
+    color: #FFFFFF;
+    font-size: 1.8em;
+    letter-spacing: 0.05em;
+    outline: none;
+    padding: 0.6em 2.0em 0.6em 2.0em;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.organizer .start .content .start-game:hover {
+    background-color: #e6bb5a;
+}
+
+.organizer .start .content .start-game:active {
+    background-color: #d6ae55;
+}
+
+.organizer .scoreboard .countdown {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100vw;
+}
+
+.organizer .scoreboard .countdown span {
+    background-color: #F8CA61;
+    border-bottom-left-radius: 0.35em;
+    border-bottom-right-radius: 0.35em;
+    color: #FFFFFF;
+    font-family: 'museo_sans400', sans-serif;
+    font-size: 3.0em;
+    letter-spacing: 0.03em;
+    padding: 0.4em 0.7em 0.2em 0.7em;
+    position: relative;
+    top: 0.1em;
+}
+
+.organizer .scoreboard .teams {
+    height: 60vh;
+    padding-top: 20vh;
+    text-align: center;
+}
+
+.organizer .scoreboard .teams .team {
+    background-color: #00C2D4;
+    display: inline-block;
+    width: 30vw;
+}
+
+.organizer .results {
+    height: 100vh;
+    width: 100vw;
+}
+
+.organizer .results .content {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.organizer .results .content button {
+    background-color: #F8CA61;
+    border: none;
+    border-radius: 0.5em;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    outline: none;
+    padding: 0.5em 3.0em 0.5em 3.0em;
+    position: relative;
+}
+
+.organizer .results .content .reset-game:hover {
+    background-color: #e6bb5a;
+}
+
+.organizer .results .content .reset-game:active {
+    background-color: #d6ae55;
+}
+
+.organizer .fade {
+    transition: opacity 0.5s ease-out, height 0s 0s linear;
+}
+
+.organizer .hide {
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, height 0s 0.5s linear;
+}
+
+.organizer .snap-to {
+    transition: all 0s linear;
+}

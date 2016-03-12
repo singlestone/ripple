@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SingleStone Toss</title>
+    <link rel="stylesheet" type="text/css" href="styles/fonts.css">
+    <link rel="stylesheet" type="text/css" href="styles/player.css">
+</head>
+<body>
+    <div class="splash">
+        <div class="holder">
+            <img src="images/ripple.svg"/>
+            <span>Ripple</span>
+            <button class="start">Start</button>
+        </div>
+    </div>
+
+    <div class="pick hide snap">
+        <div class="message">
+            <span>Pick Your Team</span>
+        </div>
+        <div class="button turtles">
+            <div class="holder">
+                <span class="team-name above">Turtles</span>
+                <div class="image">
+                    <img src="images/turtle.svg"/>
+                </div>
+                <span class="team-name below">Turtles</span>
+                <span class="get-ready">Get Ready!</span>
+                <div class="wave"></div>
+            </div>
+        </div>
+        <div class="button ducks">
+            <div class="holder">
+                <span class="team-name above">Ducks</span>
+                <div class="image">
+                    <img src="images/duck-01.svg"/>
+                </div>
+                <span class="team-name below">Ducks</span>
+                <span class="get-ready">Get Ready!</span>
+                <div class="wave"></div>
+            </div>
+        </div>
+        <div class="button frogs">
+            <div class="holder">
+                <span class="team-name above">Frogs</span>
+                <div class="image">
+                    <img src="images/frog-01.svg"/>
+                </div>
+                <span class="team-name below">Frogs</span>
+                <span class="get-ready">Get Ready!</span>
+                <div class="wave"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="play hide snap">
+        <div id="drag-1" class="draggable">
+            <p>1</p>
+        </div>
+        <div id="drag-2" class="draggable">
+            <p>2</p>
+        </div>
+    </div>
+
+    <div class="result hide snap">
+
+    </div>
+
+    <script type="text/javascript" src="scripts/lib/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="scripts/lib/interact.min.js"></script>
+    <script type="text/javascript" src="scripts/app/player.js"></script>
+</body>
+</html>
