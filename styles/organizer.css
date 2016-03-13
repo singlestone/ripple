@@ -75,14 +75,15 @@ body {
 
 .organizer .scoreboard .countdown span {
     background-color: #F8CA61;
-    border-bottom-left-radius: 0.35em;
-    border-bottom-right-radius: 0.35em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
     color: #FFFFFF;
-    font-family: 'museo_sans400', sans-serif;
-    font-size: 3.0em;
-    letter-spacing: 0.03em;
-    padding: 0.4em 0.7em 0.2em 0.7em;
+    font-family: 'museo_sans500', sans-serif;
+    font-size: 2.8em;
+    letter-spacing: 0.01em;
+    padding: 0.4em 0.8em 0.2em 0.8em;
     position: relative;
+    text-indent: 0.01em;
     top: 0.1em;
 }
 
@@ -93,10 +94,44 @@ body {
 }
 
 .organizer .scoreboard .teams .team {
-    background-color: #00C2D4;
     display: inline-block;
-    width: 30vw;
+    font-family: 'museo_sans500', sans-serif;
+    text-align: center;
+    width: 250px;
 }
+
+.organizer .scoreboard .teams .team .name {
+    display: block;
+    font-size: 1.3em;
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+    text-transform: uppercase;
+}
+
+.organizer .scoreboard .teams .team img {
+    display: block;
+    margin: 15px auto 40px auto;
+    width: 65%;
+}
+
+.organizer .scoreboard .teams .team .score {
+    display: block;
+    font-size: 5.5em;
+}
+
+
+.organizer .scoreboard .teams .team.turtles {
+    color: #D44E4C;
+}
+
+.organizer .scoreboard .teams .team.frogs {
+    color: #03B0C0
+}
+
+.organizer .scoreboard .teams .team.ducks {
+    color: #E2B857
+}
+
 
 .organizer .results {
     height: 100vh;
