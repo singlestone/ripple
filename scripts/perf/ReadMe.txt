@@ -1,0 +1,1 @@
+This folder contains Load Impact 'user scenarios' that are combined into a game simulation test.  

@@ -1,0 +1,13 @@
+-- Score 3 points for your team
+
+local json_string = json.stringify({ team = "B" })
+
+http.post({ url="https://scbbcni814.execute-api.us-east-1.amazonaws.com/prod/scoreincrement", headers={["Content-Type"]="application/x-www-form-urlencoded"}, data=json_string})
+
+client.sleep(math.random(0, 1))
+
+http.post({ url="https://scbbcni814.execute-api.us-east-1.amazonaws.com/prod/scoreincrement", headers={["Content-Type"]="application/x-www-form-urlencoded"}, data=json_string})
+
+client.sleep(math.random(0, 1))
+
+http.post({ url="https://scbbcni814.execute-api.us-east-1.amazonaws.com/prod/scoreincrement", headers={["Content-Type"]="application/x-www-form-urlencoded"}, data=json_string})
