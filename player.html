@@ -19,7 +19,7 @@
         <div class="message">
             <span>Pick Your Team</span>
         </div>
-        <div class="button turtles">
+        <div class="button turtles" data-team="A">
             <div class="holder">
                 <span class="team-name above">Turtles</span>
                 <img src="images/turtlescircle.svg"/>
@@ -28,7 +28,7 @@
                 <div class="wave"></div>
             </div>
         </div>
-        <div class="button ducks">
+        <div class="button ducks" data-team="B">
             <div class="holder">
                 <span class="team-name above">Ducks</span>
                 <img src="images/duckcircle.svg"/>
@@ -37,7 +37,7 @@
                 <div class="wave"></div>
             </div>
         </div>
-        <div class="button frogs">
+        <div class="button frogs" data-team="C">
             <div class="holder">
                 <span class="team-name above">Frogs</span>
                 <img src="images/frogscircle.svg"/>
@@ -49,20 +49,19 @@
     </div>
 
     <div class="play hide snap">
-        <div id="drag-1" class="draggable">
-            <p>1</p>
-        </div>
-        <div id="drag-2" class="draggable">
-            <p>2</p>
-        </div>
+        <img class="lillypad" src="images/lillypad.svg"/>
+        <img class="koi" src="images/coyfish.svg"/>
+        <img class="dock" src="images/dock.svg"/>
+        <div class="stone draggable"></div>
     </div>
 
-    <div class="result hide snap">
+    <div class="results hide snap">
 
     </div>
 
     <script type="text/javascript" src="scripts/lib/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="scripts/lib/interact.min.js"></script>
+    <script type="text/javascript" src="scripts/lib/moment.min.js"></script>
     <script type="text/javascript" src="scripts/app/player.js"></script>
 </body>
 </html>

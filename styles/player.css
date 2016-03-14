@@ -56,6 +56,7 @@ body {
     position: relative;
     text-indent: 0.05em;
     text-transform: uppercase;
+    z-index: 100;
 }
 
 .splash .holder button:hover {
@@ -100,6 +101,7 @@ body {
     text-align: center;
     transition: background-color 0.1s ease-out;
     width: 100vw;
+    z-index: 100;
 }
 
 .pick .button .holder {
@@ -271,7 +273,7 @@ body {
 }
 
 .play {
-    background-color: white;
+    background-color: #00C2D4;
     display: block;
     height: 100vh;
     opacity: 1;
@@ -281,57 +283,50 @@ body {
     z-index: 100;
 }
 
+.play .lillypad {
+    height: auto;
+    left: 5vw;
+    position: absolute;
+    top: 45vh;
+    width: 25vw;
+}
+
+.play .koi {
+    height: auto;
+    position: absolute;
+    right: 9vw;
+    top: 67vh;
+    width: 15vw;
+}
+
+.play .dock {
+    bottom: 0;
+    height: auto;
+    left: 20vw;
+    position: absolute;
+    width: 60vw;
+}
+
 .play.hide {
     height: 0;
     opacity: 0;
     transition: opacity 0.5s ease-out, height 0s 0.5s linear;
 }
 
+.play.hide img {
+    height: 0;
+    width: 0;
+}
 
-#drag-1, #drag-2 {
-    width: 30px;
-    height: 30px;
-    min-height: 30px;
-    margin: 5px;
 
-    background-color: #29e;
-    color: white;
-
+.stone {
+    background-color: #ED9C33;
     border-radius: 50%;
-    padding: 5px;
+    color: white;
+    height: 5vh;
     text-align: center;
-    vertical-align: middle;
-
     -webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
-}
-
-#drag-1 {
-    background-color: #ED9C33;
-    color: white;
-}
-
-#drag-2 {
-    background-color: #918265;
-    color: white;
-}
-
-#drag-me::before {
-    content: "#" attr(id);
-    font-weight: bold;
-}
-
-p {
-    margin: 6px 0 0 0;
-}
-
-.release {
-    border: 1px solid red;
-    height: 500px;
-    opacity: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    z-index: 2;
+    vertical-align: middle;
+    width: 5vh;
 }
