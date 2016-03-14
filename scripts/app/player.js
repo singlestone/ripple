@@ -5,7 +5,7 @@
             gamePolling = null,
             timestampMoment,
             gameEndMoment,
-            gameDuration = 120,
+            gameDuration = 1200,
             gameStartBuffer = 5,
             getTimeStampUrl = 'https://0h0dcuripf.execute-api.us-east-1.amazonaws.com/prod/getLatestGameTimeStamp',
             getScoresUrl = 'https://jbdlsmg8cc.execute-api.us-east-1.amazonaws.com/prod/scorescanner',
@@ -97,7 +97,9 @@
                     onmove: dragMoveListener,
                     // call this function on every dragend event
                     onend: function (event) {
-                        var textEl = event.target.querySelector('p');
+                        var stone = event.target.querySelector('p');
+                        $('.stone').addClass('sink');
+                        setTimeout(resetStone, 2000);
 
                         //textEl && (textEl.textContent =
                         //    'moved a distance of '
@@ -120,6 +122,15 @@
                 // update the posiion attributes
                 target.setAttribute('data-x', x);
                 target.setAttribute('data-y', y);
+            }
+
+            function resetStone() {
+                var $stone = $('.stone');
+
+                $stone.css('transform', 'translate(0px, 0px)');
+                $stone.attr('data-x', 0);
+                $stone.attr('data-y', 0);
+                $stone.removeClass('sink');
             }
 
             // this is used later in the resizing and gesture demos

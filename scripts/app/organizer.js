@@ -3,7 +3,7 @@
 
         var timestampMoment,
             gameEndMoment,
-            gameDuration = 120,
+            gameDuration = 1200,
             gameStartBuffer = 5,
             getTimeStampUrl = 'https://0h0dcuripf.execute-api.us-east-1.amazonaws.com/prod/getLatestGameTimeStamp',
             setTimeStampUrl = 'https://0h0dcuripf.execute-api.us-east-1.amazonaws.com/prod/setGameTimeStamp',

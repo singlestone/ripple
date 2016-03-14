@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed5b269a-595e-48f2-9f4c-ee596cda538a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organizer.html" afterPath="$PROJECT_DIR$/organizer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player.html" afterPath="$PROJECT_DIR$/player.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app/organizer.js" afterPath="$PROJECT_DIR$/scripts/app/organizer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app/player.js" afterPath="$PROJECT_DIR$/scripts/app/player.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/organizer.css" afterPath="$PROJECT_DIR$/styles/organizer.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/player.css" afterPath="$PROJECT_DIR$/styles/player.css" />
     </list>
     <ignored path="Game.iws" />
@@ -29,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="player.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="player.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6107001">
-              <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+            <state vertical-scroll-proportion="-27.48936">
+              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -43,17 +41,17 @@
         <entry file="file://$PROJECT_DIR$/scripts/app/player.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+              <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="player.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/player.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.723404">
-              <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8269778">
+              <caret line="382" column="19" selection-start-line="382" selection-start-column="19" selection-end-line="382" selection-end-column="19" />
               <folding>
                 <element signature="e#402#520#0" expanded="false" />
                 <element signature="e#542#586#0" expanded="false" />
@@ -70,8 +68,8 @@
       <file leaf-file-name="organizer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/organizer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-33.957447">
-              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            <state vertical-scroll-proportion="-23.446808">
+              <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -91,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/scripts/app/organizer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="119" column="79" selection-start-line="119" selection-start-column="79" selection-end-line="119" selection-end-column="79" />
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -146,11 +144,11 @@
         <option value="$PROJECT_DIR$/play.html" />
         <option value="$PROJECT_DIR$/styles/play.css" />
         <option value="$PROJECT_DIR$/images.html" />
-        <option value="$PROJECT_DIR$/organizer.html" />
         <option value="$PROJECT_DIR$/styles/organizer.css" />
+        <option value="$PROJECT_DIR$/organizer.html" />
         <option value="$PROJECT_DIR$/scripts/app/organizer.js" />
-        <option value="$PROJECT_DIR$/scripts/app/player.js" />
         <option value="$PROJECT_DIR$/player.html" />
+        <option value="$PROJECT_DIR$/scripts/app/player.js" />
         <option value="$PROJECT_DIR$/styles/player.css" />
       </list>
     </option>
@@ -240,6 +238,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\ripple" />
       <recent name="C:\Projects\ripple\images" />
       <recent name="C:\Users\nnicolosi\WebstormProjects\Game\styles" />
       <recent name="C:\Users\nnicolosi\WebstormProjects\Game" />
@@ -466,22 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app/organizer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="119" column="79" selection-start-line="119" selection-start-column="79" selection-end-line="119" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organizer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.957447">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/organizer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.510638">
@@ -490,18 +473,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/organizer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.446808">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app/organizer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.48936">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/app/player.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/player.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.723404">
-          <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8269778">
+          <caret line="382" column="19" selection-start-line="382" selection-start-column="19" selection-end-line="382" selection-end-column="19" />
           <folding>
             <element signature="e#402#520#0" expanded="false" />
             <element signature="e#542#586#0" expanded="false" />
@@ -511,14 +518,6 @@
             <element signature="e#1319#1415#0" expanded="false" />
             <element signature="e#1438#1497#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6107001">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
