@@ -56,6 +56,7 @@ body {
     position: relative;
     text-indent: 0.05em;
     text-transform: uppercase;
+    z-index: 100;
 }
 
 .splash .holder button:hover {
@@ -100,6 +101,7 @@ body {
     text-align: center;
     transition: background-color 0.1s ease-out;
     width: 100vw;
+    z-index: 100;
 }
 
 .pick .button .holder {
@@ -271,14 +273,63 @@ body {
 }
 
 .play {
-    background-color: white;
+    background-color: #00C2D4;
     display: block;
     height: 100vh;
     opacity: 1;
+    overflow: hidden;
     position: absolute;
     transition: opacity 0.5s ease-out, height 0s 0s linear;
     width: 100vw;
     z-index: 100;
+}
+
+.play .target {
+    border: 4px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+.play .target.one-point {
+    padding: 3vh;
+    position: absolute;
+}
+
+.play .target.one-point.position-one {
+    left: 29vw;
+    top: 5vh;
+}
+
+.play .target.two-point {
+    padding: 3vh;
+}
+
+.play .target.three-point {
+    height: 12vh;
+    width: 12vh;
+}
+
+.play .lillypad {
+    height: auto;
+    left: 5vw;
+    position: absolute;
+    top: 45vh;
+    width: 25vw;
+}
+
+.play .koi {
+    height: auto;
+    position: absolute;
+    right: 9vw;
+    top: 67vh;
+    width: 15vw;
+}
+
+.play .dock {
+    bottom: 0;
+    height: auto;
+    left: 20vw;
+    position: absolute;
+    width: 60vw;
 }
 
 .play.hide {
@@ -287,51 +338,82 @@ body {
     transition: opacity 0.5s ease-out, height 0s 0.5s linear;
 }
 
+.play.hide img {
+    height: 0;
+    width: 0;
+}
 
-#drag-1, #drag-2 {
-    width: 30px;
-    height: 30px;
-    min-height: 30px;
-    margin: 5px;
-
-    background-color: #29e;
-    color: white;
-
+.play .stone {
+    background-color: #ED9C33;
     border-radius: 50%;
-    padding: 5px;
-    text-align: center;
-    vertical-align: middle;
-
+    bottom: 5vh;
+    box-shadow: inset 0 0 0 #00c2d4;
+    color: #FFFFFF;
+    left: 35vw;
+    height: 5vh;
+    position: absolute;
     -webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
+    transition: all 0s ease-out, opacity 0.2s ease-out;
+    vertical-align: middle;
+    width: 5vh;
 }
 
-#drag-1 {
-    background-color: #ED9C33;
-    color: white;
+.play .stone .wave {
+    border: 2px solid transparent;
+    border-radius: 50%;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    transition: all 0s ease-out;
+    width: 100%;
 }
 
-#drag-2 {
-    background-color: #918265;
-    color: white;
-}
-
-#drag-me::before {
-    content: "#" attr(id);
-    font-weight: bold;
-}
-
-p {
-    margin: 6px 0 0 0;
-}
-
-.release {
-    border: 1px solid red;
-    height: 500px;
+.play .stone.sink {
+    box-shadow: inset 0 0 10vw #00c2d4;
     opacity: 0;
+    transition: box-shadow 1.5s linear, opacity 1s 1s ease-out;
+}
+
+.play .stone.one::after {
+    color: #FFFFFF;
+    content: "+1";
+    font-size: 3.3em;
+    font-family: 'museo_sans700', sans-serif;
+    left: 0.1em;
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    z-index: 2;
+    top: 0.2em;
+    z-index: 5;
+}
+
+.play .stone.two::after {
+    color: #FFFFFF;
+    content: "+2";
+    font-size: 3.3em;
+    font-family: 'museo_sans700', sans-serif;
+    left: 0.1em;
+    position: absolute;
+    top: 0.2em;
+    z-index: 5;
+}
+
+.play .stone.three::after {
+    color: #FFFFFF;
+    content: "+3";
+    font-size: 3.3em;
+    font-family: 'museo_sans700', sans-serif;
+    left: 0.1em;
+    position: absolute;
+    top: 0.2em;
+    z-index: 5;
+}
+
+.play .stone.sink .wave {
+    border-color: #FFFFFF;
+    height: 200%;
+    border-radius: 50%;
+    width: 200%;
+    margin-left: -52%;
+    margin-top: -52%;
+    transition: all 2s ease-out;
 }

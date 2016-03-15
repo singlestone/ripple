@@ -3,11 +3,13 @@
 
         var timestampMoment,
             gameEndMoment,
-            gameDuration = 120,
-            getTimeStampUrl = 'https://0h0dcuripf.execute-api.us-east-1.amazonaws.com/prod/getLatestGameTimeStamp',
-            setTimeStampUrl = 'https://0h0dcuripf.execute-api.us-east-1.amazonaws.com/prod/setGameTimeStamp',
+            gameDuration,
+            gameStartBuffer = 5,
+            getGameUrl = 'https://jljbi2jkfj.execute-api.us-east-1.amazonaws.com/prod/game',
+            startGameUrl = 'https://jljbi2jkfj.execute-api.us-east-1.amazonaws.com/prod/start',
             resetUrl = 'https://mzupek0wyg.execute-api.us-east-1.amazonaws.com/prod/scoreclear',
             getScoresUrl = 'https://jbdlsmg8cc.execute-api.us-east-1.amazonaws.com/prod/scorescanner',
+            scoreboardPolling,
             epoch = '1979-12-11 00:00:00';
 
         initialize();
@@ -20,17 +22,19 @@
 
         function initializePageState() {
             $.ajax({
-                url: getTimeStampUrl,
+                url: getGameUrl,
                 type: 'GET',
                 success: function(response) {
-                    if (response && response !== epoch) {
-                        timestampMoment = moment(response + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
-                        gameEndMoment = timestampMoment.clone().add(gameDuration, 'seconds');
-                        console.log('timestamp', timestampMoment.toString(), 'now', moment().toString());
-                        console.log('gameEnd', gameEndMoment.toString(), 'now', moment().toString());
+                    if (response && response.time !== epoch) {
+                        timestampMoment = moment(response.time + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
+                        gameDuration = response.duration;
+                        gameEndMoment = timestampMoment.clone().add(gameStartBuffer + gameDuration, 'seconds');
+                        //console.log('timestamp', timestampMoment.toString(), 'now', moment().toString());
+                        //console.log('gameEnd', gameEndMoment.toString(), 'now', moment().toString());
 
                         if (gameEndMoment.isAfter(moment())) {
                             showScoreboard();
+                            startScoreboardPolling();
                         } else {
                             showResults();
                         }
@@ -44,12 +48,17 @@
         function initializeStartButtonBehavior() {
             $(document).on('click.start', '.start-game', function(event) {
                 event.preventDefault();
+                $('.start').addClass('hide');
                 $.ajax({
-                    url: setTimeStampUrl,
-                    type: 'GET',
+                    url: startGameUrl,
+                    type: 'POST',
+                    processData: false,
+                    data: JSON.stringify({
+                        level: 1,
+                        duration: 120
+                    }),
                     success: function(response) {
                         initializePageState();
-                        //todo: polling
                     }
                 })
             });
@@ -68,10 +77,6 @@
                     }
                 })
             });
-        }
-
-        function activateGameCountdown() {
-
         }
 
         function showStart() {
@@ -97,6 +102,68 @@
                     $(selector).addClass('hide');
                 }
             })
+        }
+
+        function startScoreboardPolling() {
+            scoreboardPolling = setInterval(getScores, 1000);
+
+            function getScores() {
+                $.ajax({
+                    url: getScoresUrl,
+                    type: 'GET',
+                    success: function(response) {
+                        updateCountdown();
+                        updateScores(response);
+                        if (gameEndMoment.isBefore(moment())) {
+                            clearInterval(scoreboardPolling);
+                        }
+                    }
+                });
+            }
+
+            function updateCountdown() {
+                var $countdown = $('.scoreboard .countdown span'),
+                    secondsRemaining = gameEndMoment.diff(moment(), 'seconds'),
+                    displayMinutes = '00',
+                    displaySeconds = '00';
+
+                secondsRemaining = secondsRemaining > gameDuration ? gameDuration : secondsRemaining;
+
+                if (secondsRemaining >= 0) {
+                    displayMinutes = padNumber(parseInt(secondsRemaining / 60));
+                    displaySeconds = padNumber(parseInt(secondsRemaining % 60));
+                }
+
+                $countdown.html(displayMinutes + ':' + displaySeconds);
+
+                function padNumber(number) {
+                    return ('' + number).length < 2 ? '0' + number : number;
+                }
+            }
+
+            function updateScores(scores) {
+                var $turtlesScore = $('.scoreboard .team.turtles .score'),
+                    $frogsScore = $('.scoreboard .team.frogs .score'),
+                    $ducksScore = $('.scoreboard .team.ducks .score');
+
+                $turtlesScore.html(getScoreForTeam(scores, "A"));
+                $ducksScore.html(getScoreForTeam(scores, "B"));
+                $frogsScore.html(getScoreForTeam(scores, "C"));
+
+                function getScoreForTeam(scores, team) {
+                    var matches = (scores || [])
+                        .filter(function (score) {
+                            return score.team === team;
+                    });
+
+                    if (matches.length > 0){
+                        return matches[0].score;
+                    }
+                }
+
+
+
+            }
         }
     });
 })();

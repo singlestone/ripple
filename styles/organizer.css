@@ -49,6 +49,7 @@ body {
     border: none;
     border-radius: 0.4em;
     color: #FFFFFF;
+    cursor: pointer;
     font-size: 1.8em;
     letter-spacing: 0.05em;
     outline: none;
@@ -78,13 +79,15 @@ body {
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
     color: #FFFFFF;
+    display: block;
     font-family: 'museo_sans500', sans-serif;
     font-size: 2.8em;
     letter-spacing: 0.01em;
+    margin: -10px auto 0 auto;
     padding: 0.4em 0.8em 0.2em 0.8em;
     position: relative;
     text-indent: 0.01em;
-    top: 0.1em;
+    width: 150px;
 }
 
 .organizer .scoreboard .teams {
