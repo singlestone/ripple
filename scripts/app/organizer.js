@@ -3,10 +3,10 @@
 
         var timestampMoment,
             gameEndMoment,
-            gameDuration = 1200,
+            gameDuration,
             gameStartBuffer = 5,
-            getTimeStampUrl = 'https://0h0dcuripf.execute-api.us-east-1.amazonaws.com/prod/getLatestGameTimeStamp',
-            setTimeStampUrl = 'https://0h0dcuripf.execute-api.us-east-1.amazonaws.com/prod/setGameTimeStamp',
+            getGameUrl = 'https://jljbi2jkfj.execute-api.us-east-1.amazonaws.com/prod/game',
+            startGameUrl = 'https://jljbi2jkfj.execute-api.us-east-1.amazonaws.com/prod/start',
             resetUrl = 'https://mzupek0wyg.execute-api.us-east-1.amazonaws.com/prod/scoreclear',
             getScoresUrl = 'https://jbdlsmg8cc.execute-api.us-east-1.amazonaws.com/prod/scorescanner',
             scoreboardPolling,
@@ -22,11 +22,12 @@
 
         function initializePageState() {
             $.ajax({
-                url: getTimeStampUrl,
+                url: getGameUrl,
                 type: 'GET',
                 success: function(response) {
-                    if (response && response !== epoch) {
-                        timestampMoment = moment(response + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
+                    if (response && response.time !== epoch) {
+                        timestampMoment = moment(response.time + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
+                        gameDuration = response.duration;
                         gameEndMoment = timestampMoment.clone().add(gameStartBuffer + gameDuration, 'seconds');
                         //console.log('timestamp', timestampMoment.toString(), 'now', moment().toString());
                         //console.log('gameEnd', gameEndMoment.toString(), 'now', moment().toString());
@@ -49,8 +50,13 @@
                 event.preventDefault();
                 $('.start').addClass('hide');
                 $.ajax({
-                    url: setTimeStampUrl,
-                    type: 'GET',
+                    url: startGameUrl,
+                    type: 'POST',
+                    processData: false,
+                    data: JSON.stringify({
+                        level: 1,
+                        duration: 120
+                    }),
                     success: function(response) {
                         initializePageState();
                     }

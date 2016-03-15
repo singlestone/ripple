@@ -5,9 +5,10 @@
             gamePolling = null,
             timestampMoment,
             gameEndMoment,
-            gameDuration = 1200,
+            gameDuration,
             gameStartBuffer = 5,
-            getTimeStampUrl = 'https://0h0dcuripf.execute-api.us-east-1.amazonaws.com/prod/getLatestGameTimeStamp',
+            getGameUrl = 'https://jljbi2jkfj.execute-api.us-east-1.amazonaws.com/prod/game',
+            postScoreUrl = 'https://jljbi2jkfj.execute-api.us-east-1.amazonaws.com/prod/score',
             getScoresUrl = 'https://jbdlsmg8cc.execute-api.us-east-1.amazonaws.com/prod/scorescanner',
             epoch = '1979-12-11 00:00:00';
 
@@ -34,14 +35,15 @@
 
             function checkForGame() {
                 $.ajax({
-                    url: getTimeStampUrl,
+                    url: getGameUrl,
                     type: 'GET',
                     success: function(response) {
                         var secondsRemaining;
 
-                        if (response && response !== epoch) {
+                        if (response && response.time !== epoch) {
                             clearTimeout(gamePolling);
-                            timestampMoment = moment(response + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
+                            timestampMoment = moment(response.time + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
+                            gameDuration = response.duration;
                             gameEndMoment = timestampMoment.clone().add(gameStartBuffer + gameDuration, 'seconds');
                             secondsRemaining = gameEndMoment.diff(moment(), 'seconds');
 
@@ -63,7 +65,6 @@
         }
 
         function showResults() {
-            console.log('showResults is executing');
             hideAllBut('.results');
             $('.results').removeClass('hide');
         }
@@ -75,7 +76,7 @@
                 if (selector !== show) {
                     $(selector).addClass('hide');
                 }
-            })
+            });
         }
 
         function initializeGame() {
@@ -97,14 +98,53 @@
                     onmove: dragMoveListener,
                     // call this function on every dragend event
                     onend: function (event) {
-                        var stone = event.target.querySelector('p');
-                        $('.stone').addClass('sink');
+                        var $stone = $('.stone');
+
+                        $stone.addClass('sink');
                         setTimeout(resetStone, 2000);
 
-                        //textEl && (textEl.textContent =
-                        //    'moved a distance of '
-                        //    + (Math.sqrt(event.dx * event.dx +
-                        //        event.dy * event.dy)|0) + 'px');
+                        if (isInsideTarget('.target.three-point')) {
+                            $stone.addClass('three');
+                            postScore(selectedTeam, 3);
+                        } else if (isInsideTarget('.target.two-point')) {
+                            $stone.addClass('two');
+                            postScore(selectedTeam, 2);
+                        } else if (isInsideTarget('.target.one-point')) {
+                            $stone.addClass('one');
+                            postScore(selectedTeam, 1);
+                        }
+
+                        function isInsideTarget(selector) {
+                            var target = getCenterCoordinates($(selector)[0]),
+                                stone = getCenterCoordinates($('.stone')[0]);
+
+                            return Math.sqrt(Math.pow(stone.x - target.x, 2) + Math.pow(stone.y - target.y, 2)) < target.r;
+                        }
+
+                        function getCenterCoordinates(element) {
+                            var rectangle = element.getBoundingClientRect(),
+                                radius = rectangle.height / 2,
+                                x = rectangle.left + radius,
+                                y = rectangle.top + radius;
+
+                            return {
+                                r: radius,
+                                x: x,
+                                y: y
+                            };
+                        }
+
+                        function postScore(team, points) {
+                            $.ajax({
+                                url: postScoreUrl,
+                                type: 'POST',
+                                processData: false,
+                                data: JSON.stringify({
+                                    team: team,
+                                    score: points
+                                })
+                            });
+                        }
                     }
                 });
 
@@ -131,6 +171,9 @@
                 $stone.attr('data-x', 0);
                 $stone.attr('data-y', 0);
                 $stone.removeClass('sink');
+                $stone.removeClass('one');
+                $stone.removeClass('two');
+                $stone.removeClass('three');
             }
 
             // this is used later in the resizing and gesture demos

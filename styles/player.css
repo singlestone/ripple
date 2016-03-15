@@ -375,6 +375,39 @@ body {
     transition: box-shadow 1.5s linear, opacity 1s 1s ease-out;
 }
 
+.play .stone.one::after {
+    color: #FFFFFF;
+    content: "+1";
+    font-size: 3.3em;
+    font-family: 'museo_sans700', sans-serif;
+    left: 0.1em;
+    position: absolute;
+    top: 0.2em;
+    z-index: 5;
+}
+
+.play .stone.two::after {
+    color: #FFFFFF;
+    content: "+2";
+    font-size: 3.3em;
+    font-family: 'museo_sans700', sans-serif;
+    left: 0.1em;
+    position: absolute;
+    top: 0.2em;
+    z-index: 5;
+}
+
+.play .stone.three::after {
+    color: #FFFFFF;
+    content: "+3";
+    font-size: 3.3em;
+    font-family: 'museo_sans700', sans-serif;
+    left: 0.1em;
+    position: absolute;
+    top: 0.2em;
+    z-index: 5;
+}
+
 .play .stone.sink .wave {
     border-color: #FFFFFF;
     height: 200%;
