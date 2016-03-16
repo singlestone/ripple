@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed5b269a-595e-48f2-9f4c-ee596cda538a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images.html" afterPath="$PROJECT_DIR$/images.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player.html" afterPath="$PROJECT_DIR$/player.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app/organizer.js" afterPath="$PROJECT_DIR$/scripts/app/organizer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app/player.js" afterPath="$PROJECT_DIR$/scripts/app/player.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/player.css" afterPath="$PROJECT_DIR$/styles/player.css" />
@@ -28,18 +30,18 @@
       <file leaf-file-name="player.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.48936">
-              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+            <state vertical-scroll-proportion="-58.787235">
+              <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="player.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/app/player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9689579">
-              <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -48,16 +50,15 @@
       <file leaf-file-name="player.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/player.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.872341">
-              <caret line="388" column="24" selection-start-line="388" selection-start-column="24" selection-end-line="388" selection-end-column="24" />
+            <state vertical-scroll-proportion="-18.595745">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
               <folding>
-                <element signature="e#402#520#0" expanded="false" />
-                <element signature="e#542#586#0" expanded="false" />
-                <element signature="e#609#824#0" expanded="false" />
-                <element signature="e#1204#1238#0" expanded="false" />
-                <element signature="e#1270#1304#0" expanded="false" />
-                <element signature="e#1319#1415#0" expanded="false" />
-                <element signature="e#1438#1497#0" expanded="false" />
+                <element signature="e#548#592#0" expanded="false" />
+                <element signature="e#615#830#0" expanded="false" />
+                <element signature="e#1210#1244#0" expanded="false" />
+                <element signature="e#1276#1310#0" expanded="false" />
+                <element signature="e#1325#1421#0" expanded="false" />
+                <element signature="e#1444#1503#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -83,27 +84,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="organizer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="organizer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/app/organizer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.16851442">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="images.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#img#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -141,13 +127,13 @@
         <option value="$PROJECT_DIR$/scripts/app/play.js" />
         <option value="$PROJECT_DIR$/play.html" />
         <option value="$PROJECT_DIR$/styles/play.css" />
-        <option value="$PROJECT_DIR$/images.html" />
         <option value="$PROJECT_DIR$/styles/organizer.css" />
         <option value="$PROJECT_DIR$/organizer.html" />
+        <option value="$PROJECT_DIR$/images.html" />
         <option value="$PROJECT_DIR$/player.html" />
         <option value="$PROJECT_DIR$/styles/player.css" />
-        <option value="$PROJECT_DIR$/scripts/app/organizer.js" />
         <option value="$PROJECT_DIR$/scripts/app/player.js" />
+        <option value="$PROJECT_DIR$/scripts/app/organizer.js" />
       </list>
     </option>
   </component>
@@ -371,13 +357,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
           <folding>
-            <element signature="e#402#520#0" expanded="false" />
-            <element signature="e#542#586#0" expanded="false" />
-            <element signature="e#609#824#0" expanded="false" />
-            <element signature="e#1204#1238#0" expanded="false" />
-            <element signature="e#1270#1304#0" expanded="false" />
-            <element signature="e#1319#1415#0" expanded="false" />
-            <element signature="e#1438#1497#0" expanded="false" />
+            <element signature="e#548#592#0" expanded="false" />
+            <element signature="e#615#830#0" expanded="false" />
+            <element signature="e#1210#1244#0" expanded="false" />
+            <element signature="e#1276#1310#0" expanded="false" />
+            <element signature="e#1325#1421#0" expanded="false" />
+            <element signature="e#1444#1503#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -410,12 +395,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#img#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -451,19 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/images.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#img#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/organizer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.510638">
@@ -480,42 +447,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/images.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19464996">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/player.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.48936">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        <state vertical-scroll-proportion="-58.787235">
+          <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/player.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.872341">
-          <caret line="388" column="24" selection-start-line="388" selection-start-column="24" selection-end-line="388" selection-end-column="24" />
+        <state vertical-scroll-proportion="-18.595745">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding>
-            <element signature="e#402#520#0" expanded="false" />
-            <element signature="e#542#586#0" expanded="false" />
-            <element signature="e#609#824#0" expanded="false" />
-            <element signature="e#1204#1238#0" expanded="false" />
-            <element signature="e#1270#1304#0" expanded="false" />
-            <element signature="e#1319#1415#0" expanded="false" />
-            <element signature="e#1438#1497#0" expanded="false" />
+            <element signature="e#548#592#0" expanded="false" />
+            <element signature="e#615#830#0" expanded="false" />
+            <element signature="e#1210#1244#0" expanded="false" />
+            <element signature="e#1276#1310#0" expanded="false" />
+            <element signature="e#1325#1421#0" expanded="false" />
+            <element signature="e#1444#1503#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app/organizer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/app/player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9689579">
-          <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app/organizer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16851442">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>

@@ -29,8 +29,6 @@
                         timestampMoment = moment(response.time + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
                         gameDuration = response.duration;
                         gameEndMoment = timestampMoment.clone().add(gameStartBuffer + gameDuration, 'seconds');
-                        //console.log('timestamp', timestampMoment.toString(), 'now', moment().toString());
-                        //console.log('gameEnd', gameEndMoment.toString(), 'now', moment().toString());
 
                         if (gameEndMoment.isAfter(moment())) {
                             showScoreboard();

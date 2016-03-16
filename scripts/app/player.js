@@ -1,7 +1,8 @@
-(function() {
-    $(document).ready(function() {
+(function () {
+    $(document).ready(function () {
 
         var selectedTeam = null,
+            selectedTeamName = null,
             gamePolling = null,
             timestampMoment,
             gameEndMoment,
@@ -12,17 +13,22 @@
             getScoresUrl = 'https://jbdlsmg8cc.execute-api.us-east-1.amazonaws.com/prod/scorescanner',
             epoch = '1979-12-11 00:00:00';
 
-        $(document).on('click.start', '.splash .start', function(event) {
+        $(document).on('click.start', '.splash .start', function (event) {
             event.preventDefault();
             $('.splash').addClass('hide');
-            setTimeout(function() {
+            setTimeout(function () {
+                if (selectedTeam && selectedTeamName) {
+                    $('.button.' + selectedTeamName).addClass('selected')
+                    $('.pick').addClass('waiting');
+                }
                 $('.pick').removeClass('hide');
             }, 250);
         });
 
-        $(document).on('click', '.pick .button', function(event) {
+        $(document).on('click', '.pick .button', function (event) {
             event.preventDefault();
             selectedTeam = $(this).data('team');
+            selectedTeamName = $(this).data('teamname');
             $(this).addClass('selected');
             $('.pick').addClass('waiting');
             startGamePolling();
@@ -37,21 +43,19 @@
                 $.ajax({
                     url: getGameUrl,
                     type: 'GET',
-                    success: function(response) {
+                    success: function (response) {
                         var secondsRemaining;
 
                         if (response && response.time !== epoch) {
-                            clearTimeout(gamePolling);
                             timestampMoment = moment(response.time + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
                             gameDuration = response.duration;
                             gameEndMoment = timestampMoment.clone().add(gameStartBuffer + gameDuration, 'seconds');
                             secondsRemaining = gameEndMoment.diff(moment(), 'seconds');
 
                             if (gameEndMoment.isAfter(moment()) && secondsRemaining <= gameDuration) {
+                                clearTimeout(gamePolling);
                                 showGame();
                                 setTimeout(showResults, secondsRemaining * 1000);
-                            } else {
-                                showResults();
                             }
                         }
                     }
@@ -61,22 +65,61 @@
 
         function showGame() {
             hideAllBut('.play');
-            $('.play').removeClass('hide');
+        }
+
+        function showSplash() {
+            hideAllBut('.splash');
         }
 
         function showResults() {
-            hideAllBut('.results');
-            $('.results').removeClass('hide');
+            $.ajax({
+                url: getScoresUrl,
+                type: 'GET',
+                success: function (response) {
+
+                    if (isWinner(response)) {
+                        hideAllBut('.winner.' + selectedTeamName);
+                    } else {
+                        hideAllBut('.loser');
+                    }
+
+                    setTimeout(showSplash, 10000);
+
+                    function isWinner(teamScores) {
+                        var playerTeamScore = getPlayerTeamScore(teamScores);
+
+                        return (teamScores || [])
+                            .filter(function (teamScore) {
+                                return teamScore.team !== selectedTeam;
+                            })
+                            .every(function (teamScore) {
+                                return playerTeamScore > 0 && playerTeamScore >= teamScore.score;
+                            });
+                    }
+
+                    function getPlayerTeamScore(teamScores) {
+                        return (teamScores || [])
+                                .filter(function (teamScore) {
+                                    return teamScore.team === selectedTeam;
+                                })
+                                .map(function (teamScore) {
+                                    return teamScore.score;
+                                })[0] || 0;
+                    }
+                }
+            });
         }
 
         function hideAllBut(show) {
-            var selectors = ['.splash', '.pick', '.play', '.results'];
+            var selectors = ['.splash', '.pick', '.play', '.winner.turtles', '.winner.ducks', '.winner.frogs', '.loser'];
 
             selectors.forEach(function (selector) {
                 if (selector !== show) {
                     $(selector).addClass('hide');
                 }
             });
+
+            $(show).removeClass('hide');
         }
 
         function initializeGame() {
@@ -84,34 +127,44 @@
             interact('.draggable')
                 .draggable({
                     // enable inertial throwing
-                    inertia: true,
+                    inertia: {
+                        allowResume: false,
+                        resistance: 10,
+                        minSpeed: 100
+                    },
                     // keep the element within the area of it's parent
                     restrict: {
-                        restriction: "parent",
+                        restriction: 'parent',
                         endOnly: true,
                         elementRect: {top: 0, left: 0, bottom: 1, right: 1}
                     },
-                    // enable autoScroll
-                    autoScroll: true,
-
                     // call this function on every dragmove event
                     onmove: dragMoveListener,
                     // call this function on every dragend event
                     onend: function (event) {
                         var $stone = $('.stone');
 
-                        $stone.addClass('sink');
-                        setTimeout(resetStone, 2000);
+                        if (!isOnDock()) {
+                            $stone.addClass('sink');
+                            setTimeout(resetStone, 2000);
 
-                        if (isInsideTarget('.target.three-point')) {
-                            $stone.addClass('three');
-                            postScore(selectedTeam, 3);
-                        } else if (isInsideTarget('.target.two-point')) {
-                            $stone.addClass('two');
-                            postScore(selectedTeam, 2);
-                        } else if (isInsideTarget('.target.one-point')) {
-                            $stone.addClass('one');
-                            postScore(selectedTeam, 1);
+                            if (isInsideTarget('.target.three-point')) {
+                                $stone.addClass('three');
+                                postScore(selectedTeam, 3);
+                            } else if (isInsideTarget('.target.two-point')) {
+                                $stone.addClass('two');
+                                postScore(selectedTeam, 2);
+                            } else if (isInsideTarget('.target.one-point')) {
+                                $stone.addClass('one');
+                                postScore(selectedTeam, 1);
+                            }
+                        }
+
+                        function isOnDock() {
+                            var stone = getCenterCoordinates($('.stone')[0]),
+                                dock = $('.dock')[0].getBoundingClientRect();
+
+                            return stone.x > dock.left && stone.x < dock.right && stone.y > dock.top;
                         }
 
                         function isInsideTarget(selector) {
