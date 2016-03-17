@@ -26,7 +26,7 @@
             }, 250);
         });
 
-        $(document).on('click', '.pick .button', function (event) {
+        $(document).on('click.pick', '.pick .button', function (event) {
             event.preventDefault();
             selectedTeam = $(this).data('team');
             selectedTeamName = $(this).data('teamname');
@@ -35,7 +35,7 @@
             startGamePolling();
         });
 
-        //initializeFullScreenMode();
+        initializeFullScreenMode();
         initializeGame();
 
         function startGamePolling() {
@@ -126,10 +126,10 @@
 
         function initializeFullScreenMode() {
             /* Android Browser hack */
-            window.addEventListener("load", function() { window.scrollTo(0, 0); });
+            //window.addEventListener('load', function() { window.scrollTo(0, 0); });
 
             // use this with care, only if you don't have overflow content to be scrolled.
-            document.addEventListener("touchmove",   function(e) { e.preventDefault() });
+            $(document).on('touchmove', function(e) { e.preventDefault() });
             /* End Android hack */
 
             //fullScreen();
