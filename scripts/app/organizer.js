@@ -1,5 +1,5 @@
-(function() {
-    $(document).ready(function() {
+(function () {
+    $(document).ready(function () {
 
         var timestampMoment,
             gameEndMoment,
@@ -24,7 +24,7 @@
             $.ajax({
                 url: getGameUrl,
                 type: 'GET',
-                success: function(response) {
+                success: function (response) {
                     if (response && response.time !== epoch) {
                         timestampMoment = moment(response.time + ' +00:00', 'YYYY-MM-DD HH:mm:ss.SSSSSS Z');
                         gameDuration = response.duration;
@@ -44,7 +44,7 @@
         }
 
         function initializeStartButtonBehavior() {
-            $(document).on('click.start', '.start-game', function(event) {
+            $(document).on('click.start', '.start-game', function (event) {
                 event.preventDefault();
                 $('.start').addClass('hide');
                 $.ajax({
@@ -55,7 +55,7 @@
                         level: 1,
                         duration: 120
                     }),
-                    success: function(response) {
+                    success: function (response) {
                         initializePageState();
                     }
                 })
@@ -63,14 +63,15 @@
         }
 
         function initializeResetButtonBehavior() {
-            $(document).on('click.reset', '.reset-game', function(event) {
+            $(document).on('click.reset', '.reset-game', function (event) {
                 event.preventDefault();
                 $.ajax({
                     url: resetUrl,
                     type: 'GET',
-                    success: function(response) {
+                    success: function (response) {
                         timestampMoment = null;
                         gameEndMoment = null;
+                        resetScores();
                         showStart();
                     }
                 })
@@ -89,7 +90,68 @@
 
         function showResults() {
             hideAllBut('.results');
-            $('.results').removeClass('hide');
+
+            $.ajax({
+                url: getScoresUrl,
+                type: 'GET',
+                success: function (response) {
+                    updateResults(response);
+                    $('.results').removeClass('hide');
+                }
+            });
+
+            function updateResults(scores) {
+                var $turtlesScore = $('.results .team.turtles .score'),
+                    $frogsScore = $('.results .team.frogs .score'),
+                    $ducksScore = $('.results .team.ducks .score');
+
+                $turtlesScore.html(getScoreForTeam(scores, 'A'));
+                $('.results .team.turtles')
+                    .removeClass('first second third')
+                    .addClass(getRankForTeam(scores, 'A'));
+
+                $ducksScore.html(getScoreForTeam(scores, 'B'));
+                $('.results .team.ducks')
+                    .removeClass('first second third')
+                    .addClass(getRankForTeam(scores, 'B'));
+
+                $frogsScore.html(getScoreForTeam(scores, 'C'));
+                $('.results .team.frogs')
+                    .removeClass('first second third')
+                    .addClass(getRankForTeam(scores, 'C'));
+
+                function getScoreForTeam(scores, team) {
+                    var matches = (scores || [])
+                        .filter(function (score) {
+                            return score.team === team;
+                        });
+
+                    if (matches.length > 0) {
+                        return matches[0].score;
+                    }
+                }
+
+                function getRankForTeam(scores, team) {
+                    var rankedTeamScores = (scores || [])
+                        .sort(function (a, b) {
+                            if (a.score > b.score) {
+                                return -1;
+                            } else if (a.score < b.score) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+
+                    if (rankedTeamScores[0].team === team) {
+                        return 'first';
+                    } else if (rankedTeamScores[1].team === team) {
+                        return 'second';
+                    } else {
+                        return 'third';
+                    }
+                }
+            }
         }
 
         function hideAllBut(show) {
@@ -102,6 +164,12 @@
             })
         }
 
+        function resetScores() {
+            $('.scoreboard .team.turtles .score').html('--');
+            $('.scoreboard .team.frogs .score').html('--');
+            $('.scoreboard .team.ducks .score').html('--');
+        }
+
         function startScoreboardPolling() {
             scoreboardPolling = setInterval(getScores, 1000);
 
@@ -109,11 +177,12 @@
                 $.ajax({
                     url: getScoresUrl,
                     type: 'GET',
-                    success: function(response) {
+                    success: function (response) {
                         updateCountdown();
                         updateScores(response);
                         if (gameEndMoment.isBefore(moment())) {
                             clearInterval(scoreboardPolling);
+                            showResults();
                         }
                     }
                 });
@@ -152,15 +221,12 @@
                     var matches = (scores || [])
                         .filter(function (score) {
                             return score.team === team;
-                    });
+                        });
 
-                    if (matches.length > 0){
+                    if (matches.length > 0) {
                         return matches[0].score;
                     }
                 }
-
-
-
             }
         }
     });

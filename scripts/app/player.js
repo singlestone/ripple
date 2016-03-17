@@ -20,6 +20,7 @@
                 if (selectedTeam && selectedTeamName) {
                     $('.button.' + selectedTeamName).addClass('selected')
                     $('.pick').addClass('waiting');
+                    startGamePolling();
                 }
                 $('.pick').removeClass('hide');
             }, 250);
@@ -34,6 +35,7 @@
             startGamePolling();
         });
 
+        //initializeFullScreenMode();
         initializeGame();
 
         function startGamePolling() {
@@ -122,6 +124,30 @@
             $(show).removeClass('hide');
         }
 
+        function initializeFullScreenMode() {
+            /* Android Browser hack */
+            window.addEventListener("load", function() { window.scrollTo(0, 0); });
+
+            // use this with care, only if you don't have overflow content to be scrolled.
+            document.addEventListener("touchmove",   function(e) { e.preventDefault() });
+            /* End Android hack */
+
+            //fullScreen();
+            //
+            //function fullScreen() {
+            //    var body = document.documentElement;
+            //    if (body.requestFullscreen) {
+            //        body.requestFullscreen();
+            //    } else if (body.webkitRequestFullscreen) {
+            //        body.webkitRequestFullscreen();
+            //    } else if (body.mozRequestFullScreen) {
+            //        body.mozRequestFullScreen();
+            //    } else if (body.msRequestFullscreen) {
+            //        body.msRequestFullscreen();
+            //    }
+            //}
+        }
+
         function initializeGame() {
             // target elements with the "draggable" class
             interact('.draggable')
@@ -129,7 +155,7 @@
                     // enable inertial throwing
                     inertia: {
                         allowResume: false,
-                        resistance: 10,
+                        resistance: 5,
                         minSpeed: 100
                     },
                     // keep the element within the area of it's parent
@@ -146,7 +172,7 @@
 
                         if (!isOnDock()) {
                             $stone.addClass('sink');
-                            setTimeout(resetStone, 2000);
+                            setTimeout(resetStone, 1000);
 
                             if (isInsideTarget('.target.three-point')) {
                                 $stone.addClass('three');
