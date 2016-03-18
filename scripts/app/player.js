@@ -126,26 +126,10 @@
 
         function initializeFullScreenMode() {
             /* Android Browser hack */
-            //window.addEventListener('load', function() { window.scrollTo(0, 0); });
+            window.addEventListener('load', function() { window.scrollTo(0, 0); });
 
             // use this with care, only if you don't have overflow content to be scrolled.
             $(document).on('touchmove', function(e) { e.preventDefault() });
-            /* End Android hack */
-
-            //fullScreen();
-            //
-            //function fullScreen() {
-            //    var body = document.documentElement;
-            //    if (body.requestFullscreen) {
-            //        body.requestFullscreen();
-            //    } else if (body.webkitRequestFullscreen) {
-            //        body.webkitRequestFullscreen();
-            //    } else if (body.mozRequestFullScreen) {
-            //        body.mozRequestFullScreen();
-            //    } else if (body.msRequestFullscreen) {
-            //        body.msRequestFullscreen();
-            //    }
-            //}
         }
 
         function initializeGame() {
@@ -156,7 +140,8 @@
                     inertia: {
                         allowResume: false,
                         resistance: 5,
-                        minSpeed: 100
+                        minSpeed: 100,
+                        endSpeed: 50
                     },
                     // keep the element within the area of it's parent
                     restrict: {
@@ -238,7 +223,7 @@
                     target.style.transform =
                         'translate(' + x + 'px, ' + y + 'px)';
 
-                // update the posiion attributes
+                // update the position attributes
                 target.setAttribute('data-x', x);
                 target.setAttribute('data-y', y);
             }
