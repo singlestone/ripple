@@ -309,6 +309,11 @@ body {
     width: 12vh;
 }
 
+.play .target.too-close {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
 .play .lillypad {
     height: auto;
     left: 5vw;
