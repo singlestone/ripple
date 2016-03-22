@@ -48,13 +48,14 @@ body {
     border: none;
     border-radius: 0.4em;
     color: #FFFFFF;
+    font-family: 'museo_sans500', sans-serif;
     font-size: 3.5em;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     margin-top: 2em;
     outline: none;
     padding: 0.7em 3.5em 0.7em 3.5em;
     position: relative;
-    text-indent: 0.05em;
+    text-indent: 0.1em;
     text-transform: uppercase;
     z-index: 100;
 }
@@ -87,7 +88,7 @@ body {
 .pick .message span {
     color: #4C4C4C;
     display: block;
-    font-family: 'museo_sans400', sans-serif;
+    font-family: 'museo_sans500', sans-serif;
     font-size: 3em;
     position: relative;
     text-align: center;
@@ -113,7 +114,7 @@ body {
 
 .pick .button .holder .team-name {
     color: #FFFFFF;
-    font-family: 'museo_sans400', sans-serif;
+    font-family: 'museo_sans500', sans-serif;
     text-transform: uppercase;
 }
 
@@ -163,7 +164,7 @@ body {
     position: relative;
     top: 26em;
     transform: scale(2.5);
-    width: 17vw;
+    width: 18vw;
 }
 
 .pick .button.turtles {
@@ -245,13 +246,13 @@ body {
     animation: 2.5s linear 0s infinite normal wave;
     height: 1em;
     opacity: 1;
-    transition: opacity 0.3s 0.3s ease-out, height 0.3s 0.3s ease-out;
+    transition: opacity 0.2s 0.5s ease-out, height 0.3s 0.3s ease-out;
 }
 
-@-webkit-keyframes wave { from { background-position-x: 0; } to { background-position-x: 17vw; }  }
-@-moz-keyframes wave { from { background-position-x: 0; } to { background-position-x: 17vw; }  }
-@-o-keyframes wave { from { background-position-x: 0; } to { background-position-x: 17vw; }  }
-@keyframes wave { from { background-position-x: 0; } to { background-position-x: 17vw; }  }
+@-webkit-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
+@-moz-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
+@-o-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
+@keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
 
 .pick .button.selected.turtles:hover,
 .pick .button.selected.turtles:active {

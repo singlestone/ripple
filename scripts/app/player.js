@@ -168,6 +168,9 @@ ripple.player = (function () {
         $(document).on('touchmove', function (e) {
             e.preventDefault()
         });
+
+        // remove 300 millisecond delay for touch events
+        FastClick.attach(document.body);
     }
 
     function initializeGamePlay() {
