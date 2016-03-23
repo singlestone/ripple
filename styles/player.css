@@ -171,36 +171,12 @@ body {
     background-color: rgb(243, 102, 100);
 }
 
-.pick .button.turtles:hover {
-    background-color: rgb(233, 102, 100);
-}
-
-.pick .button.turtles:active {
-    background-color: rgb(223, 95, 93);
-}
-
 .pick .button.ducks {
     background-color: rgb(248, 202, 97);
 }
 
-.pick .button.ducks:hover {
-    background-color: rgb(243, 196, 98);
-}
-
-.pick .button.ducks:active {
-    background-color: rgb(238, 192, 97);
-}
-
 .pick .button.frogs {
     background-color: rgb(0, 194, 209);
-}
-
-.pick .button.frogs:hover {
-    background-color: rgb(0, 189, 204);
-}
-
-.pick .button.frogs:active {
-    background-color: rgb(0, 184, 199);
 }
 
 .pick.waiting .message,
@@ -208,6 +184,11 @@ body {
     height: 0;
     opacity: 0;
     transition: opacity 0.3s ease-out, height 0.3s 0.3s ease-out;
+}
+
+.pick.waiting.snap .message,
+.pick.waiting.snap .button {
+    transition: none;
 }
 
 .pick .button.selected {
@@ -249,25 +230,34 @@ body {
     transition: opacity 0.2s 0.5s ease-out, height 0.3s 0.3s ease-out;
 }
 
+.pick .button.selected.snap {
+    transition: none;
+}
+
+.pick .button.selected.snap .holder .team-name.above {
+    transition: none;
+}
+
+.pick .button.selected.snap .holder img {
+    transition: none;
+}
+
+.pick .button.selected.snap .holder .team-name.below {
+    transition: none;
+}
+
+.pick .button.selected.snap .holder .get-ready {
+    transition: none;
+}
+
+.pick .button.selected.snap .holder .wave {
+    transition: none;
+}
+
 @-webkit-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
 @-moz-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
 @-o-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
 @keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
-
-.pick .button.selected.turtles:hover,
-.pick .button.selected.turtles:active {
-    background-color: rgb(243, 102, 100);
-}
-
-.pick .button.selected.ducks:hover,
-.pick .button.selected.ducks:active {
-    background-color: rgb(248, 202, 97);
-}
-
-.pick .button.selected.frogs:hover,
-.pick .button.selected.frogs:active {
-    background-color: rgb(0, 194, 209);
-}
 
 .pick.hide {
     height: 0;

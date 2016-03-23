@@ -10,6 +10,7 @@ ripple.player = (function () {
         gameEndMoment,
         gameDuration,
         gameStartBuffer = 5,
+        getTeamUrl = 'https://6b6tujt82g.execute-api.us-east-1.amazonaws.com/prod/assignPlayerTeam',
         getGameUrl = 'https://jljbi2jkfj.execute-api.us-east-1.amazonaws.com/prod/game',
         postScoreUrl = 'https://jljbi2jkfj.execute-api.us-east-1.amazonaws.com/prod/score',
         getScoresUrl = 'https://jbdlsmg8cc.execute-api.us-east-1.amazonaws.com/prod/scorescanner',
@@ -24,7 +25,6 @@ ripple.player = (function () {
         initializeFullScreenMode();
         initializeGamePlay();
         bindStartButtonBehavior();
-        bindPickTeamButtonBehavior();
     }
 
     function bindStartButtonBehavior() {
@@ -32,24 +32,8 @@ ripple.player = (function () {
             event.preventDefault();
             $('.splash').addClass('hide');
             setTimeout(function () {
-                if (selectedTeam && selectedTeamName) {
-                    $('.button.' + selectedTeamName).addClass('selected')
-                    $('.pick').addClass('waiting');
-                    startGamePolling();
-                }
-                $('.pick').removeClass('hide');
+                showTeamSelect();
             }, 250);
-        });
-    }
-
-    function bindPickTeamButtonBehavior() {
-        $(document).on('click.pick', '.pick .button', function (event) {
-            event.preventDefault();
-            selectedTeam = $(this).data('team');
-            selectedTeamName = $(this).data('teamname');
-            $(this).addClass('selected');
-            $('.pick').addClass('waiting');
-            startGamePolling();
         });
     }
 
@@ -97,14 +81,57 @@ ripple.player = (function () {
 
         $('.pick .button').removeClass('selected');
         $('.pick').removeClass('waiting');
-    }
-
-    function showGame() {
-        hideAllBut('.play');
+        $('.snap').removeClass('snap');
     }
 
     function showSplash() {
         hideAllBut('.splash');
+    }
+
+    function showTeamSelect() {
+        if (selectedTeam && selectedTeamName) {
+            revealTeamSelection(true);
+        } else {
+            setTimeout(autoSelectTeam, 2000);
+        }
+
+        hideAllBut('.pick');
+
+        function autoSelectTeam() {
+            $.ajax({
+                url: getTeamUrl,
+                type: 'GET',
+                success: function (response) {
+                    selectedTeam = response;
+                    selectedTeamName = resolveTeamName(response);
+                    revealTeamSelection();
+
+                    function resolveTeamName(team) {
+                        switch (team) {
+                            case 'A':
+                                return 'turtles';
+                            case 'B':
+                                return 'ducks';
+                            case 'C':
+                                return 'frogs';
+                        }
+                    }
+                }
+            });
+        }
+
+        function revealTeamSelection(snap) {
+            $('.pick .button.' + selectedTeamName).addClass(snap ? 'selected snap' : 'selected');
+            $('.pick').addClass(snap ? 'waiting snap' : 'waiting');
+            startGamePolling();
+
+
+        }
+
+    }
+
+    function showGame() {
+        hideAllBut('.play');
     }
 
     function showResults() {
@@ -119,7 +146,9 @@ ripple.player = (function () {
                     hideAllBut('.loser');
                 }
 
-                setTimeout(showSplash, 10000);
+                setTimeout(function () {
+                    resetGame(true);
+                }, 10000);
 
                 function isWinner(teamScores) {
                     var playerTeamScore = getPlayerTeamScore(teamScores);
