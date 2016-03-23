@@ -57,7 +57,7 @@ ripple.organizer = (function () {
                 processData: false,
                 data: JSON.stringify({
                     level: 1,
-                    duration: 120
+                    duration: 60
                 }),
                 success: function (response) {
                     initializePageState();
