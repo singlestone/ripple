@@ -164,7 +164,7 @@ body {
     position: relative;
     top: 26em;
     transform: scale(2.5);
-    width: 18vw;
+    width: 20vw;
 }
 
 .pick .button.turtles {
@@ -254,10 +254,10 @@ body {
     transition: none;
 }
 
-@-webkit-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
-@-moz-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
-@-o-keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
-@keyframes wave { from { background-position-x: 0; } to { background-position-x: 18vw; }  }
+@-webkit-keyframes wave { from { background-position-x: 0; } to { background-position-x: 20vw; }  }
+@-moz-keyframes wave { from { background-position-x: 0; } to { background-position-x: 20vw; }  }
+@-o-keyframes wave { from { background-position-x: 0; } to { background-position-x: 20vw; }  }
+@keyframes wave { from { background-position-x: 0; } to { background-position-x: 20vw; }  }
 
 .pick.hide {
     height: 0;

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed5b269a-595e-48f2-9f4c-ee596cda538a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player.html" afterPath="$PROJECT_DIR$/player.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app/player.js" afterPath="$PROJECT_DIR$/scripts/app/player.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/player.css" afterPath="$PROJECT_DIR$/styles/player.css" />
     </list>
     <ignored path="Game.iws" />
@@ -56,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="player.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/player.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-177.06383">
-              <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6055777">
+              <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
               <folding>
                 <element signature="e#5#165#0" expanded="false" />
                 <element signature="e#175#390#0" expanded="false" />
@@ -94,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="organizer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="organizer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/app/organizer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7161862">
+            <state vertical-scroll-proportion="0.0">
               <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
               <folding>
                 <element signature="e#712#832#0" expanded="false" />
@@ -153,8 +150,8 @@
         <option value="$PROJECT_DIR$/scripts/lib/fastclick.js" />
         <option value="$PROJECT_DIR$/scripts/app/player.js" />
         <option value="$PROJECT_DIR$/scripts/app/organizer.js" />
-        <option value="$PROJECT_DIR$/styles/player.css" />
         <option value="$PROJECT_DIR$/player.html" />
+        <option value="$PROJECT_DIR$/styles/player.css" />
       </list>
     </option>
   </component>
@@ -488,22 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/player.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-177.06383">
-          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
-          <folding>
-            <element signature="e#5#165#0" expanded="false" />
-            <element signature="e#175#390#0" expanded="false" />
-            <element signature="e#408#526#0" expanded="false" />
-            <element signature="e#548#592#0" expanded="false" />
-            <element signature="e#615#830#0" expanded="false" />
-            <element signature="e#1369#1465#0" expanded="false" />
-            <element signature="e#1488#1547#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/app/player.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -532,7 +513,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/app/organizer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7161862">
+        <state vertical-scroll-proportion="0.0">
           <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
           <folding>
             <element signature="e#712#832#0" expanded="false" />
@@ -544,6 +525,22 @@
             <element signature="e#5247#5474#0" expanded="false" />
             <element signature="e#5503#5680#0" expanded="false" />
             <element signature="e#5720#7808#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/player.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6055777">
+          <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+          <folding>
+            <element signature="e#5#165#0" expanded="false" />
+            <element signature="e#175#390#0" expanded="false" />
+            <element signature="e#408#526#0" expanded="false" />
+            <element signature="e#548#592#0" expanded="false" />
+            <element signature="e#615#830#0" expanded="false" />
+            <element signature="e#1369#1465#0" expanded="false" />
+            <element signature="e#1488#1547#0" expanded="false" />
           </folding>
         </state>
       </provider>
